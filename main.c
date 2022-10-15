@@ -3,15 +3,26 @@
 #include <windows.h>
 
 #define TITULO_OPCAO1 "Adicionar conta"
-#define TITULO_OPCAO2 "Multiplicacao de dois numeros inteiros"
-#define TITULO_OPCAO3 "Divisao de dois numeros inteiros"
-#define TITULO_OPCAO4 "Saida do programa"
+#define TITULO_OPCAO2 "Remover conta"
+#define TITULO_OPCAO3 "Listar contas cadastradas"
+#define TITULO_OPCAO4 "Buscar conta"
+#define TITULO_OPCAO5 "Editar conta"
+#define TITULO_OPCAO6 "Consultar contas ativas em uma agencia"
+#define TITULO_OPCAO7 "Consultar quantitativo de agencias"
+#define TITULO_OPCAO8 "Sair"
 
-#define N_OPCOES 4
+
+#define N_OPCOES 8
 #define OPCAO1 '1'
 #define OPCAO2 '2'
 #define OPCAO3 '3'
 #define OPCAO4 '4'
+#define OPCAO5 '5'
+#define OPCAO6 '6'
+#define OPCAO7 '7'
+#define OPCAO8 '8'
+
+
 
 /****
 * Função: LimpaBuffer()
