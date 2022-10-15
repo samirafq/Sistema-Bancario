@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <windows.h>
 
-#define TITULO_OPCAO1 "Soma de dois numeros inteiros"
+#define TITULO_OPCAO1 "Adicionar conta"
 #define TITULO_OPCAO2 "Multiplicacao de dois numeros inteiros"
 #define TITULO_OPCAO3 "Divisao de dois numeros inteiros"
 #define TITULO_OPCAO4 "Saida do programa"
@@ -104,26 +104,18 @@ int main(void) {
         switch(op) {
             case OPCAO1:
                 Beep(1000,500); /* Emite um beep */
-                inteiro1 = LeInteiro();
-                inteiro2 = LeInteiro();
-                printf("%d + %d = %d\n", inteiro1, inteiro2,
-                       inteiro1 + inteiro2);
+               
+                       //adicionar aqui a função de criar conta
                 break;
 
             case OPCAO2:
                 Beep(1000,500);
-                inteiro1 = LeInteiro();
-                inteiro2 = LeInteiro();
-                printf("%d * %d = %d\n", inteiro1, inteiro2,
-                       inteiro1 * inteiro2);
+                
                 break;
 
             case OPCAO3:
                 Beep(1000,500);
-                inteiro1 = LeInteiro();
-                inteiro2 = LeInteiro();
-                printf("%d / %d = %d\n", inteiro1, inteiro2,
-                       inteiro1 / inteiro2);
+               
                 break;
 
             case OPCAO4:
