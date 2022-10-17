@@ -1,4 +1,4 @@
-typedef struct AgenciaBancaria;
+typedef struct agenciabancaria AgenciaBancaria;
 AgenciaBancaria* adc_conta(AgenciaBancaria* dados);
 AgenciaBancaria* remove_conta(AgenciaBancaria* dados);
 AgenciaBancaria* imprimir_contas_cadastradas(AgenciaBancaria* dados);
