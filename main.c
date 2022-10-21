@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include <windows.h>
+//#include <windows.h>
 
 #define TITULO_OPCAO1 "Adicionar conta"
 #define TITULO_OPCAO2 "Remover conta"
@@ -134,6 +134,10 @@ int main(void) {
                 saida = 1;
                 printf("Obrigado por usar este programa.");
                 break;
+
+            case OPCAO5:
+                Beep(1000,500);
+                printf("Opcao 5 selecionada");
 
             default:
                 printf("Este programa possui um bug.");
