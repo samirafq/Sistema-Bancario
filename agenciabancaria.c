@@ -34,7 +34,7 @@ AgenciaBancaria* agencia = (AgenciaBancaria*) malloc(sizeof(AgenciaBancaria));
     printf("Por favor, insira o hoarario de funcionamento da agencia: ");
     scanf("%s", agencia->hora_de_funcionamento);
 
-    /*TESTE*/
+    /*TESTE DE NOVO*/
    
 }
 
