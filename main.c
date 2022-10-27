@@ -111,12 +111,19 @@ int main(void) {
     do {
         ApresentaMenu(N_OPCOES, OPCAO1,
                       TITULO_OPCAO1, TITULO_OPCAO2,
-                      TITULO_OPCAO3, TITULO_OPCAO4);
+                      TITULO_OPCAO3, TITULO_OPCAO4, TITULO_OPCAO5, TITULO_OPCAO6, TITULO_OPCAO7, TITULO_OPCAO8);
+
         op = LeOpcao(OPCAO1, OPCAO1 + N_OPCOES - 1);
+        
         switch(op) {
             case OPCAO1:
+
                 Beep(1000,500); /* Emite um beep */
-               
+                
+                inteiro1 = LeInteiro();
+                inteiro2 = LeInteiro();
+                printf("%d + %d = %d\n", inteiro1, inteiro2,
+                       inteiro1 + inteiro2);
                        //adicionar aqui a função de criar conta
                 break;
 
@@ -140,10 +147,26 @@ int main(void) {
                 Beep(1000,500);
                 printf("Opcao 5 selecionada");
 
+            case OPCAO6:
+                Beep(1000,500);
+                printf("Opcao 5 selecionada");
+
+            case OPCAO7:
+                Beep(1000,500);
+                printf("Opcao 5 selecionada");
+
+                case OPCAO8:
+                
+                Beep(1000,500);
+                printf("Opcao 5 selecionada");
+
             default:
+
                 printf("Este programa possui um bug.");
                 return 1;
         }
+
     } while(!saida);
+
     return 0;
 }
