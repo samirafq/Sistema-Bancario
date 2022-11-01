@@ -89,84 +89,98 @@ int LeInteiro(void) {
 *   menorOpcao (entrada): caractere associado ao item I
 * Retorno: Nada
 ****/
-void ApresentaMenu(int nItens, int menorOpcao, ...) {
+void ApresentaMenu(int nItens, int Opcao, ...) {
     int i;
     va_list argumentos;
     /* Inicia lista de argumentos variáveis */
-    va_start(argumentos, menorOpcao);
+    va_start(argumentos, Opcao);
     /* Lê cada argumento e imprime na tela. Note que o */
     /* tipo de cada argumento é char *, que é o tipo que */
     /* representa strings em C */
     for(i = 0; i < nItens; ++i) {
-        printf("%c-%s\n", menorOpcao++, va_arg(argumentos, char *));
+        printf("%c-%s\n", Opcao++, va_arg(argumentos, char *));
     }
     va_end(argumentos);/* Encerra processamento de argumentos */
 }
 
 int main(void) {
-    unsigned char op;
-    int inteiro1, inteiro2;
+    unsigned char opcao;
     unsigned int saida = 0;
 
     do {
-        ApresentaMenu(N_OPCOES, OPCAO1,
+        Menu(N_OPCOES, OPCAO1,
                       TITULO_OPCAO1, TITULO_OPCAO2,
                       TITULO_OPCAO3, TITULO_OPCAO4, TITULO_OPCAO5, TITULO_OPCAO6, TITULO_OPCAO7, TITULO_OPCAO8);
 
-        op = LeOpcao(OPCAO1, OPCAO1 + N_OPCOES - 1);
+        opcao = LeOp(OPCAO1, OPCAO1 + N_OPCOES - 1);
         
-        switch(op) {
+        switch(opcao){
+
             case OPCAO1:
 
-                Beep(1000,500); /* Emite um beep */
+                Beep(1000,500);
                 
-                inteiro1 = LeInteiro();
-                inteiro2 = LeInteiro();
-                printf("%d + %d = %d\n", inteiro1, inteiro2,
-                       inteiro1 + inteiro2);
-                       //adicionar aqui a função de criar conta
+               printf("Adicionar conta\n");
+                       
                 break;
 
             case OPCAO2:
+
                 Beep(1000,500);
+
+                printf("Remover conta\n");
                 
                 break;
 
             case OPCAO3:
+
                 Beep(1000,500);
+
+                printf("Listar contas cadastradas\n");
                
                 break;
 
             case OPCAO4:
+
                 Beep(1000,500);
-                saida = 1;
-                printf("Obrigado por usar este programa.");
+               
+                printf("Buscar conta\n");
+
                 break;
 
             case OPCAO5:
+
                 Beep(1000,500);
-                printf("Opcao 5 selecionada");
+
+                printf("Editar conta\n");
 
             case OPCAO6:
+
                 Beep(1000,500);
-                printf("Opcao 5 selecionada");
+
+                printf("Consultar contas ativas em uma dada agencia\n");
 
             case OPCAO7:
+
                 Beep(1000,500);
-                printf("Opcao 5 selecionada");
+
+                printf("Consultar quantitativo de agencias\n");
 
                 case OPCAO8:
                 
                 Beep(1000,500);
-                printf("Opcao 5 selecionada");
+
+                printf("Sair\n");
 
             default:
 
-                printf("Este programa possui um bug.");
+                printf("Opcao invalida!");
+
                 return 1;
         }
 
     } while(!saida);
 
     return 0;
+
 }
