@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-//#include <windows.h>
+#include <windows.h>
+//#include "agenciabancaria.c"
+#include "contabancaria.c"
 
 #define TITULO_OPCAO1 "Adicionar conta"
 #define TITULO_OPCAO2 "Remover conta"
@@ -63,24 +65,7 @@ int LeOpcao(int menorValor, int maiorValor) {
     }
     return op;
 }
-/****
-* Função: LeInteiro()
-* Descrição: Lê um número inteiro introduzido pelo usuário
-* Parâmetros: Nenhum
-* Retorno: O inteiro lido
-****/
-int LeInteiro(void) {
-    int umInt, nValoresLidos;
-    printf("Digite um valor inteiro: ");
-    nValoresLidos = scanf("%d", &umInt);
-    while (nValoresLidos == 0) { /*Nenhum inteiro foi lido*/
-        LimpaBuffer();
-        printf("Entrada incorreta. Digite um valor inteiro: ");
-        nValoresLidos = scanf("%d", &umInt);
-    }
-    LimpaBuffer();
-    return umInt;
-}
+
 /****
 * Função: ApresentaMenu
 * Descrição: Apresenta menu com número indeterminado de opções
@@ -89,7 +74,7 @@ int LeInteiro(void) {
 *   menorOpcao (entrada): caractere associado ao item I
 * Retorno: Nada
 ****/
-void ApresentaMenu(int nItens, int Opcao, ...) {
+void Menu(int nItens, int Opcao, ...) {
     int i;
     va_list argumentos;
     /* Inicia lista de argumentos variáveis */
@@ -112,7 +97,7 @@ int main(void) {
                       TITULO_OPCAO1, TITULO_OPCAO2,
                       TITULO_OPCAO3, TITULO_OPCAO4, TITULO_OPCAO5, TITULO_OPCAO6, TITULO_OPCAO7, TITULO_OPCAO8);
 
-        opcao = LeOp(OPCAO1, OPCAO1 + N_OPCOES - 1);
+        opcao = LeOpcao(OPCAO1, OPCAO1 + N_OPCOES - 1);
         
         switch(opcao){
 
@@ -120,7 +105,7 @@ int main(void) {
 
                 Beep(1000,500);
                 
-               printf("Adicionar conta\n");
+                ContaBancaria* conta = adicionar_conta();
                        
                 break;
 
@@ -136,7 +121,7 @@ int main(void) {
 
                 Beep(1000,500);
 
-                printf("Listar contas cadastradas\n");
+                imprime_conta(conta);
                
                 break;
 
@@ -144,7 +129,7 @@ int main(void) {
 
                 Beep(1000,500);
                
-                printf("Buscar conta\n");
+                //ContaBancaria* conta = ();
 
                 break;
 
