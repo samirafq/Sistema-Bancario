@@ -3,4 +3,9 @@ Agencia: 8
  Data de Abertura: a
  Saldo: 0.000000
  Status: aaa
- Numero: 13439528
+ Numero: 13439528Agencia: 1102
+ Cliente: samira
+ Data de Abertura: 30042002
+ Saldo: 30000.000000
+ Status: ativa
+ Numero: 7123480

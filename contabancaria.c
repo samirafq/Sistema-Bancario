@@ -25,20 +25,20 @@ ContaBancaria *conta;
         printf("Erro ao alocar memoria");
         exit(1);
     }
-    printf("Por favor, insira a agencia do cliente:\n ");
+    printf("\nPor favor, insira a agencia do cliente:\n ");
     scanf("%s", conta->agencia);
-    printf("Por favor, insira o nome do cliente:\n ");
+    printf("\nPor favor, insira o nome do cliente:\n ");
     scanf("%s", conta->cliente);
-    printf("Por favor, insira a data da abertura da conta:\n ");
+    printf("\nPor favor, insira a data da abertura da conta:\n ");
     scanf("%s", conta->data_de_abertura);
-    printf("Por favor, insira o saldo da conta:\n ");
+    printf("\nPor favor, insira o saldo da conta:\n ");
     scanf("%f", &conta->saldo);
-    printf("Por favor, insira o status da sua conta:\n ");
+    printf("\nPor favor, insira o status da sua conta:\n ");
     scanf("%s", conta->status);
-    printf("Por favor, insira o numero da conta:\n ");
+    printf("\nPor favor, insira o numero da conta:\n ");
     scanf("%d", &conta->numero);
 
-    FILE *arq = fopen("contabancariaEntrada.txt", "w");
+    FILE *arq = fopen("contabancariaEntrada.txt", "a");
     if(arq == NULL){
         printf("Erro ao abrir o arquivo");
         exit(1);

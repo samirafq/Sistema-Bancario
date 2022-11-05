@@ -106,6 +106,7 @@ int main(void) {
                 Beep(1000,500);
                 
                 ContaBancaria* conta = adicionar_conta();
+               // cadastro(conta);
                        
                 break;
 
@@ -122,7 +123,7 @@ int main(void) {
                 Beep(1000,500);
 
                 imprime_conta(conta);
-                imprime_agenciaconta(conta);
+                //imprime_agenciaconta(conta);
                
                 break;
 

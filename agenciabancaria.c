@@ -20,7 +20,7 @@ struct agenciabancaria{
  struct lista{
 
     AgenciaBancaria* conta;
-    struct lista*prox;
+    struct lista* prox;
 };
 
 void cadastro(AgenciaBancaria *dados, Lista* l){
@@ -44,7 +44,7 @@ void cadastro(AgenciaBancaria *dados, Lista* l){
     printf("Por favor, insira o hoarario de funcionamento da agencia: ");
     scanf("%d", dados->hora_de_funcionamento);
    
-   FILE *arq = fopen("agenciabancariaEntrada.txt", "w");
+   FILE *arq = fopen("agenciabancariaEntrada.txt", "a");
     if(arq == NULL){
         printf("Erro ao abrir o arquivo");
         exit(1);
@@ -80,18 +80,7 @@ void cadastro(AgenciaBancaria *dados, Lista* l){
 
 }*/
 
-    void imprime_agenciaconta(AgenciaBancaria* conta){
-
-    printf("\nNome %s \n", conta->nome);
-    printf("\nCodigo %d \n", conta->codigo);
-    printf("\nLocalizacao %s \n", conta->localizacao);
-    printf("\nConta %d \n", conta->conta);
-    printf("\nNumero do cliente %d \n", conta->numero_do_cliente);
-    printf("\nHora de funcionamento %s \n", conta->hora_de_funcionamento);
-
-}
-
-  Lista* buscar_conta(int elemento, Lista* l){
+Lista* buscar_conta(int elemento, Lista* l){
 
 Lista * contador;
 
@@ -103,21 +92,36 @@ Lista * contador;
 	return NULL;
 
 }
+    void imprime_agenciaconta(AgenciaBancaria* conta, Lista* l){
 
+    Lista*contador;
+   
+    for(contador=l; contador!=NULL; contador=contador->prox){
+        printf(" Conta = %i \n", contador->conta);
+    }
 
-/*void editar_conta(char agencia, char cliente, char data_de_abertura, float saldo, char status, int numero){
+    printf("\nNome %s \n", conta->nome);
+    printf("\nCodigo %d \n", conta->codigo);
+    printf("\nLocalizacao %s \n", conta->localizacao);
+    printf("\nConta %d \n", conta->conta);
+    printf("\nNumero do cliente %d \n", conta->numero_do_cliente);
+    printf("\nHora de funcionamento %s \n", conta->hora_de_funcionamento);
+
 }
 
-void consultar_conta_ativa(char agencia, char cliente, char data_de_abertura, float saldo, char status, int numero){
+/*void editar_conta(){
+}
+
+void consultar_conta_ativa(){
 
 
 }
 
-void consultar_quantitativo_de_agencias(char agencia, char cliente, char data_de_abertura, float saldo, char status, int numero){
+void consultar_quantitativo_de_agencias(){
 
 }
 
-void sair_conta(char agencia, char cliente, char data_de_abertura, float saldo, char status, int numero){
+void sair_conta(){
 
 
 }*/
