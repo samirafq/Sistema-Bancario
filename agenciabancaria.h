@@ -1,8 +1,9 @@
 typedef struct agenciabancaria AgenciaBancaria;
 typedef struct lista Lista;
 void cadastro(AgenciaBancaria *dados, Lista* l);
-void listar_contas_cadastradas(char* agenciabancaria, Lista* l);
-void remover_conta(AgenciaBancaria *conta, Lista* l);
+void imprime_agenciaconta(AgenciaBancaria* conta);
+Lista* buscar_conta(int elemento, Lista* l);
+/*void remover_conta(AgenciaBancaria *conta, Lista* l);
 /*void buscar_conta(char *nome, Lista* l);
 void editar_conta(AgenciaBancaria *dados);
 void consultar_conta_ativa(AgenciaBancaria *dados);

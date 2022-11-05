@@ -122,6 +122,7 @@ int main(void) {
                 Beep(1000,500);
 
                 imprime_conta(conta);
+                imprime_agenciaconta(conta);
                
                 break;
 
@@ -129,7 +130,8 @@ int main(void) {
 
                 Beep(1000,500);
                
-                //ContaBancaria* conta = ();
+                //ContaBancaria* conta = buscar_conta(conta);
+                //AgenciaBancaria* conta = buscar_conta(conta);
 
                 break;
 

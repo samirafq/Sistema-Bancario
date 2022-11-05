@@ -51,18 +51,6 @@ return conta;
 
 }
 
-void imprime_conta(ContaBancaria* conta){
-
-    printf("Agencia %s \n", conta->agencia);
-    printf("Cliente %s \n", conta->cliente);
-    printf("Data de abertura %s \n", conta->data_de_abertura);
-    printf("Status %s \n", conta->status);
-    printf("Saldo %f \n", conta-> saldo);
-    printf("Numero %i \n", conta-> numero);
-
-
-}
-
    Lista* buscar_conta(int elemento, Lista* l){
 
 Lista * contador;
@@ -76,7 +64,20 @@ Lista * contador;
 
 } 
 
+void imprime_conta(ContaBancaria* conta){
+
+    printf("\nAgencia %s \n", conta->agencia);
+    printf("\nCliente %s \n", conta->cliente);
+    printf("\nData de abertura %s \n", conta->data_de_abertura);
+    printf("\nStatus %s \n", conta->status);
+    printf("\nSaldo %f \n", conta->saldo);
+    printf("\nNumero %i \n", conta->numero);
+
+
+}
+
 /*void editar_conta(){
+    
 }
 
 Lista* consultar_conta_ativa(int elemento, Lista* l){
@@ -93,7 +94,7 @@ Lista * contador;
 }
 
 
-void consultar_quantitativo_de_agencias(char agencia, char cliente, char data_de_abertura, float saldo, char status, int numero){
+void consultar_quantitativo_de_agencias(){
 
 }
 
@@ -103,7 +104,8 @@ void remover_conta(ContaBancaria *conta){
 
 }
 
-void sair_conta(char agencia, char cliente, char data_de_abertura, float saldo, char status, int numero){
+void sair_conta(){
+
 
 
 }*/

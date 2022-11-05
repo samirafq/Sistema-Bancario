@@ -17,22 +17,15 @@ struct agenciabancaria{
     
 };
 
-typedef struct lista{
+ struct lista{
 
-ContaBancaria *info;
-
-struct lista *prox;
-
-}Lista;
- 
+    AgenciaBancaria* conta;
+    struct lista*prox;
+};
 
 void cadastro(AgenciaBancaria *dados, Lista* l){
 
     Lista* conta = (Lista*) malloc(sizeof(Lista));
-
-    conta -> info = adc_conta();
-    conta -> prox = l;
-    dados -> conta = conta;
 
     if (dados == NULL){
         printf("Erro ao alocar memoria");
@@ -62,28 +55,8 @@ void cadastro(AgenciaBancaria *dados, Lista* l){
 
 
 }
-/*void carregaArquivo(char **nome, int *codigo, char** localizacao, int *conta, int **numero_do_cliente,  unsigned int hora_de_funcionamento){
 
-}*/
-
-void salvarArquivo(char **nome, int *codigo, char** localizacao, int *conta, int **numero_do_cliente,  unsigned int *hora_de_funcionamento, int cont){
-
-    FILE *arq = fopen("agenciaabancariaEntrada.txt", "r");
-
-    int i;
-
-    for ( i = 0; i < cont; i++)
-    {
-
-        fscanf(arq, "%s\n %s\n  %s\n  %f\n %s\n  %d", nome[i], codigo[i], localizacao[i], conta[i], numero_do_cliente[i], hora_de_funcionamento[i]);
-
-    }
-
-    fclose(arq);
-
-}
-
-void remover_conta(AgenciaBancaria *conta, Lista* l){
+/*void remover_conta(AgenciaBancaria *conta, Lista* l){
 
     Lista* anterior = NULL; //ponteiro para elemento anterior
     Lista* p = l; //ponteiro para percorrer a lista
@@ -105,45 +78,29 @@ void remover_conta(AgenciaBancaria *conta, Lista* l){
     free(p); //liberar memoria de p
     return l; //retorna l
 
+}*/
+
+    void imprime_agenciaconta(AgenciaBancaria* conta){
+
+    printf("\nNome %s \n", conta->nome);
+    printf("\nCodigo %d \n", conta->codigo);
+    printf("\nLocalizacao %s \n", conta->localizacao);
+    printf("\nConta %d \n", conta->conta);
+    printf("\nNumero do cliente %d \n", conta->numero_do_cliente);
+    printf("\nHora de funcionamento %s \n", conta->hora_de_funcionamento);
+
 }
 
-void listar_contas_cadastradas(char* agenciabancaria, Lista* l){
+  Lista* buscar_conta(int elemento, Lista* l){
 
-    Lista*anterior;
+Lista * contador;
 
-    for(anterior=l; anterior!=NULL; anterior=anterior->prox){
+	for(contador=l; contador!=NULL; contador=contador->prox){
+		if(contador->conta->numero_do_cliente == elemento)
+			return contador;
+	}
 
-        printf(" Info = %d\n", anterior->info);
-    }
-
-AgenciaBancaria* conta=(AgenciaBancaria*)malloc(sizeof(AgenciaBancaria));
-    FILE *arq = fopen(agenciabancaria, "r");
-    if(arq == NULL){
-
-        printf("Erro ao abrir o arquivo");
-        exit(1);
-    }
-
-    while ( fscanf(arq, "%s %s %s %f %s %d", conta->nome, conta->codigo, conta->localizacao, conta->conta, conta->numero_do_cliente,conta->hora_de_funcionamento )!=EOF );
-    {
-
-        printf ("Nome: %s\n Codigo: %d\n Localizacao: %s\n Conta: %d\n Numero do cliente: %d\n Hora de funcionamento: %s", conta->nome, conta->codigo, conta->localizacao,conta->conta, conta->numero_do_cliente,conta->hora_de_funcionamento);
-    
-    }
-        
-    fclose(arq);
-
-    }
-
-void buscar_conta(float *conta, Lista* l){
-    
-    Lista* p;
-    for(p=l; p!=NULL; p=p->prox){
-            if(p->info == conta)
-                return p;
-    }
-
-    return NULL;
+	return NULL;
 
 }
 
