@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <windows.h>
-//#include "agenciabancaria.c"
+#include <string.h>
 #include "contabancaria.c"
+#include "agenciabancaria.c"
+
 
 #define TITULO_OPCAO1 "Adicionar conta"
 #define TITULO_OPCAO2 "Remover conta"
@@ -89,6 +91,17 @@ void Menu(int nItens, int Opcao, ...) {
 }
 
 int main(void) {
+    Lista* listas_de_contas_total=NULL;
+    //alocacao da agencia
+
+    AgenciaBancaria* banco_SFA = (AgenciaBancaria*) malloc(sizeof(AgenciaBancaria));
+
+    strcpy(banco_SFA->nome, "Agencia Samira Aquino França");
+    banco_SFA->codigo=1105;
+    strcpy(banco_SFA->localizacao, "Avenida Brasil");
+    banco_SFA->numero_do_cliente=0;
+    strcpy(banco_SFA->hora_de_funcionamento, "Atendimento a partir das 08:00 as 17:00");
+
     unsigned char opcao;
     unsigned int saida = 0;
 
@@ -105,16 +118,17 @@ int main(void) {
 
                 Beep(1000,500);
                 
-                ContaBancaria* conta = adicionar_conta();
-               // cadastro(conta);
-                       
+                ContaBancaria* conta = adiciona_conta();
+                Lista * lista_de_conta = adicionar_conta_lista(conta, listas_de_contas_total);
+                //banco_SFA->lista_de_conta_da_agencia   = lista_de_conta;  
+
                 break;
 
             case OPCAO2:
 
                 Beep(1000,500);
 
-                printf("Remover conta\n");
+                   //AgenciaBancaria* Conta = remover_conta();
                 
                 break;
 
@@ -122,8 +136,9 @@ int main(void) {
 
                 Beep(1000,500);
 
-                imprime_conta(conta);
-                //imprime_agenciaconta(conta);
+                //imprime_conta(conta);
+                imprime_agenciaconta(lista_de_conta);
+                
                
                 break;
 
@@ -131,9 +146,8 @@ int main(void) {
 
                 Beep(1000,500);
                
-                //ContaBancaria* conta = buscar_conta(conta);
-                //AgenciaBancaria* conta = buscar_conta(conta);
-
+                //Lista*f= buscar_conta(4, f);
+                //Lista*s= buscar_conta(4, s); 
                 break;
 
             case OPCAO5:

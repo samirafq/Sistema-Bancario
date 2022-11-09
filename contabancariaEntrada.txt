@@ -8,4 +8,52 @@ Agencia: 8
  Data de Abertura: 30042002
  Saldo: 30000.000000
  Status: ativa
- Numero: 7123480
+ Numero: 7123480Agencia: 0980
+ Cliente: Samira
+ Data de Abertura: 20102022
+ Saldo: 2000.000000
+ Status: ativa
+ Numero: 98764520Agencia: 8976
+ Cliente: Cibely
+ Data de Abertura: 12/12/2010
+ Saldo: 100000.000000
+ Status: ativa
+ Numero: 9801120Agencia: 98091
+ Cliente: lorrayne
+ Data de Abertura: 11/09/2022
+ Saldo: 100.000000
+ Status: ativa
+ Numero: 98972450Agencia: 98970
+ Cliente: samira
+ Data de Abertura: 09/09/2010
+ Saldo: 90000.000000
+ Status: ativa
+ Numero: 98626780Agencia: 9820
+ Cliente: luana
+ Data de Abertura: 30/08/2003
+ Saldo: 20000.000000
+ Status: ativa
+ Numero: -246661958
+ Agencia: 1230
+ Cliente: Damiao
+ Data de Abertura: 21/07/2013
+ Saldo: 3000.000000
+ Status: ativa
+ Numero: 234950
+Agencia: 2380
+ Cliente: antonio
+ Data de Abertura: 20/03/2003
+ Saldo: 1200.000000
+ Status: ativa
+ Numero: 987654
+Agencia: 76580
+ Cliente: samira
+ Data de Abertura: 09/10/2021
+ Saldo: 20000.000000
+ Status: ativa
+ Numero: 9871230Agencia: 8790
+ Cliente: jonatas
+ Data de Abertura: 09/03/2003
+ Saldo: 2000.000000
+ Status: inativa
+ Numero: 9873546

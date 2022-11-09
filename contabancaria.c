@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "contabancaria.h"
+//#include "agenciabancaria.h"
 
 struct contabancaria{
 
@@ -11,13 +12,8 @@ struct contabancaria{
     char status [60];
    unsigned int numero;
 };
-struct lista{
 
-    ContaBancaria* conta;
-    struct lista*prox;
-};
-
-ContaBancaria* adicionar_conta(void){
+ContaBancaria* adiciona_conta(void){
 
 ContaBancaria *conta;
     conta = (ContaBancaria *) malloc(sizeof(ContaBancaria));
@@ -51,7 +47,7 @@ return conta;
 
 }
 
-   Lista* buscar_conta(int elemento, Lista* l){
+  /* Lista* buscar_conta(int elemento, Lista* l){
 
 Lista * contador;
 
@@ -62,39 +58,39 @@ Lista * contador;
 
 	return NULL;
 
-} 
+} */
 
 void imprime_conta(ContaBancaria* conta){
 
-    printf("\nAgencia %s \n", conta->agencia);
-    printf("\nCliente %s \n", conta->cliente);
-    printf("\nData de abertura %s \n", conta->data_de_abertura);
-    printf("\nStatus %s \n", conta->status);
-    printf("\nSaldo %f \n", conta->saldo);
-    printf("\nNumero %i \n", conta->numero);
+    printf("\n Agencia: %s \n", conta->agencia);
+    printf("\n Cliente: %s \n", conta->cliente);
+    printf("\n Data de abertura: %s \n", conta->data_de_abertura);
+    printf("\n Status: %s \n", conta->status);
+    printf("\n Saldo: %f \n", conta->saldo);
+    printf("\n Numero: %i \n", conta->numero);
 
 
 }
 
 /*void editar_conta(){
     
-}
+}*/
 
-Lista* consultar_conta_ativa(int elemento, Lista* l){
+/*Lista* consultar_conta_ativa(int elemento, Lista* l){
 
 Lista * contador;
 
 	for(contador=l; contador!=NULL; contador=contador->prox){
-		if(contador->conta->numero ==elemento)
+		if(contador->conta->numero == elemento)
 			return contador;
 	}
 
 	return NULL;
 
-}
+}*/
 
 
-void consultar_quantitativo_de_agencias(){
+/*void consultar_quantitativo_de_agencias(){
 
 }
 
