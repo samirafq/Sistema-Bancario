@@ -91,7 +91,9 @@ void Menu(int nItens, int Opcao, ...) {
 }
 
 int main(void) {
-    Lista* listas_de_contas_total=NULL;
+    
+   Lista* listas_de_contas_total=NULL;
+
     //alocacao da agencia
 
     AgenciaBancaria* banco_SFA = (AgenciaBancaria*) malloc(sizeof(AgenciaBancaria));
@@ -120,7 +122,7 @@ int main(void) {
                 
                 ContaBancaria* conta = adiciona_conta();
                 Lista * lista_de_conta = adicionar_conta_lista(conta, listas_de_contas_total);
-                //banco_SFA->lista_de_conta_da_agencia   = lista_de_conta;  
+                banco_SFA->lista_de_conta_da_agencia   = lista_de_conta;  
 
                 break;
 
@@ -136,7 +138,7 @@ int main(void) {
 
                 Beep(1000,500);
 
-                //imprime_conta(conta);
+                imprime_conta(conta);
                 imprime_agenciaconta(lista_de_conta);
                 
                

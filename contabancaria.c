@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "contabancaria.h"
-//#include "agenciabancaria.h"
+#include "agenciabancaria.h"
 
 struct contabancaria{
 
@@ -10,7 +10,8 @@ struct contabancaria{
     char data_de_abertura [60];
     float saldo;
     char status [60];
-   unsigned int numero;
+    unsigned int numero_do_cliente;
+    unsigned int numero;
 };
 
 ContaBancaria* adiciona_conta(void){
@@ -47,7 +48,7 @@ return conta;
 
 }
 
-  /* Lista* buscar_conta(int elemento, Lista* l){
+  /*Lista* buscar_conta(int elemento, Lista* l){
 
 Lista * contador;
 
@@ -62,12 +63,12 @@ Lista * contador;
 
 void imprime_conta(ContaBancaria* conta){
 
-    printf("\n Agencia: %s \n", conta->agencia);
-    printf("\n Cliente: %s \n", conta->cliente);
+    printf("\n Agencia: %s\n", conta->agencia);
+    printf("\n Cliente: %s\n", conta->cliente);
     printf("\n Data de abertura: %s \n", conta->data_de_abertura);
-    printf("\n Status: %s \n", conta->status);
-    printf("\n Saldo: %f \n", conta->saldo);
-    printf("\n Numero: %i \n", conta->numero);
+    printf("\n Status: %s\n", conta->status);
+    printf("\n Saldo: %f\n", conta->saldo);
+    printf("\n Numero: %i\n", conta->numero);
 
 
 }
