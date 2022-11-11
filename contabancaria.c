@@ -59,7 +59,7 @@ Lista * contador;
 
 	return NULL;
 
-} */
+}*/
 
 void imprime_conta(ContaBancaria* conta){
 

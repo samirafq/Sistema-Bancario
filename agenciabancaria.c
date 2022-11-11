@@ -41,18 +41,18 @@ Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista * lista_de_co
 
     }
 
-    Lista* buscar_conta(int elemento, Lista* l){
+    /*Lista* buscar_conta(int elemento, Lista* l){
 
-    Lista * contador;
+    Lista* contador_lista;
 
-	for(contador=l; contador!=NULL; contador=contador->prox){
-		if(contador->conta->numero_do_cliente == elemento);
-			return contador;
+	for(contador_lista=l; contador_lista!=NULL; contador_lista=contador_lista->prox){
+		if(contador_lista->conta->numero_do_cliente == elemento);
+			return contador_lista;
 	}
 
 	return NULL;
 
-    }
+    }*/
 
 
     /*void editar_conta(){
