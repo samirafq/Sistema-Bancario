@@ -93,6 +93,7 @@ void Menu(int nItens, int Opcao, ...) {
 int main(void) {
     
    Lista* listas_de_contas_total=NULL;
+   int numero_conta_busca;
 
     //alocacao da agencia
 
@@ -125,12 +126,12 @@ int main(void) {
                 banco_SFA->lista_de_conta_da_agencia   = lista_de_conta;  
 
                 break;
-
+                
             case OPCAO2:
 
                 Beep(1000,500);
 
-                   //AgenciaBancaria* Conta = remover_conta();
+                //AgenciaBancaria* Conta = remover_conta();
                 
                 break;
 
@@ -139,17 +140,19 @@ int main(void) {
                 Beep(1000,500);
 
                 imprime_conta(conta);
-                imprime_agenciaconta(lista_de_conta);
-                
+                imprime_lista_de_contas(lista_de_conta);
                
                 break;
 
             case OPCAO4:
 
                 Beep(1000,500);
-               
-                //Lista*f= buscar_conta(4, f);
-                //Lista*s= buscar_conta(4, s); 
+
+               printf("Digite o numero da conta que deseja buscar: ");
+               scanf("%d", &numero_conta_busca);
+               listas_de_contas_total = buscar_conta(numero_conta_busca, listas_de_contas_total);
+               imprime_conta(listas_de_contas_total->conta);
+                
                 break;
 
             case OPCAO5:

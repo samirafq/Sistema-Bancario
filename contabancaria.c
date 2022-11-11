@@ -10,8 +10,14 @@ struct contabancaria{
     char data_de_abertura [60];
     float saldo;
     char status [60];
-    unsigned int numero_do_cliente;
-    unsigned int numero;
+    int numero;
+};
+
+struct lista
+{
+
+    ContaBancaria *conta;
+    struct lista *prox;
 };
 
 ContaBancaria* adiciona_conta(void){
@@ -48,18 +54,16 @@ return conta;
 
 }
 
-  /*Lista* buscar_conta(int elemento, Lista* l){
 
-Lista * contador;
+Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista *lista_de_conta)
+{
 
-	for(contador=l; contador!=NULL; contador=contador->prox){
-		if(contador->conta->numero == elemento)
-			return contador;
-	}
+    Lista *nova_conta = (Lista *)malloc(sizeof(Lista));
+    nova_conta->conta = conta_adicionar;
+    nova_conta->prox = lista_de_conta;
+    return nova_conta;
+}
 
-	return NULL;
-
-}*/
 
 void imprime_conta(ContaBancaria* conta){
 
@@ -72,6 +76,34 @@ void imprime_conta(ContaBancaria* conta){
 
 
 }
+
+Lista *buscar_conta(int numero_da_conta, Lista *l)
+{
+
+    Lista *contador_lista;
+
+    for (contador_lista = l; contador_lista != NULL; contador_lista = contador_lista->prox)
+    {
+        if (contador_lista->conta->numero == numero_da_conta);
+        return contador_lista;
+    }
+
+    return NULL;
+}
+
+void imprime_lista_de_contas(Lista *contas_lista)
+{
+
+    Lista *contador;
+    for (contador = contas_lista; contador != NULL; contador = contador->prox)
+    {
+        imprime_conta(contas_lista->conta);
+    }
+}
+
+
+
+
 
 /*void editar_conta(){
     
@@ -101,7 +133,8 @@ void remover_conta(ContaBancaria *conta){
 
 }
 
-void sair_conta(){
+void sair_conta(Lista* l){
+
 
 
 

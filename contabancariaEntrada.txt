@@ -1,0 +1,11 @@
+Agencia: 54360
+ Cliente: bruna
+ Data de Abertura: 09.07.2013
+ Saldo: 3000.000000
+ Status: inativa
+ Numero: 1231414268Agencia: 98765
+ Cliente: samira
+ Data de Abertura: 09.04.2003
+ Saldo: 3000.000000
+ Status: ativa
+ Numero: 23456789
