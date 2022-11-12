@@ -21,9 +21,9 @@ struct lista
 };
 
 ContaBancaria* adiciona_conta(void){
-
-ContaBancaria *conta;
-    conta = (ContaBancaria *) malloc(sizeof(ContaBancaria));
+    //printf("teste");
+    ContaBancaria *conta = (ContaBancaria *) malloc(sizeof(ContaBancaria));
+     //printf("testeiii");
     if (conta == NULL){
         printf("Erro ao alocar memoria");
         exit(1);
@@ -41,7 +41,7 @@ ContaBancaria *conta;
     printf("\nPor favor, insira o numero da conta:\n ");
     scanf("%d", &conta->numero);
 
-    FILE *arq = fopen("contabancariaEntrada.txt", "a");
+   FILE *arq = fopen("contabancariaEntrada.txt", "a");
     if(arq == NULL){
         printf("Erro ao abrir o arquivo");
         exit(1);
@@ -50,8 +50,7 @@ ContaBancaria *conta;
 
     fclose(arq);
     
-return conta;
-
+    return conta;
 }
 
 
@@ -77,6 +76,16 @@ void imprime_conta(ContaBancaria* conta){
 
 }
 
+void imprime_lista_de_contas(Lista *contas_lista)
+{
+
+    Lista *contador;
+    for (contador = contas_lista; contador != NULL; contador = contador->prox)
+    {
+        imprime_conta(contas_lista->conta);
+    }
+}
+
 Lista *buscar_conta(int numero_da_conta, Lista *l)
 {
 
@@ -90,20 +99,6 @@ Lista *buscar_conta(int numero_da_conta, Lista *l)
 
     return NULL;
 }
-
-void imprime_lista_de_contas(Lista *contas_lista)
-{
-
-    Lista *contador;
-    for (contador = contas_lista; contador != NULL; contador = contador->prox)
-    {
-        imprime_conta(contas_lista->conta);
-    }
-}
-
-
-
-
 
 /*void editar_conta(){
     

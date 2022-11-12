@@ -4,6 +4,9 @@ typedef struct lista Lista;
 /*funcao que adiciona uma conta*/
 ContaBancaria* adiciona_conta(void);
 
+/*funcao que adiciona uma conta de lista*/
+Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista *lista_de_conta);
+
 /*funcao que remove a conta*/
 //void remover_conta(ContaBancaria *conta);
 

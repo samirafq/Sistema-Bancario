@@ -97,13 +97,13 @@ int main(void) {
 
     //alocacao da agencia
 
-    AgenciaBancaria* banco_SFA = (AgenciaBancaria*) malloc(sizeof(AgenciaBancaria));
+   /* AgenciaBancaria* banco_SAF=(AgenciaBancaria*) malloc(sizeof(AgenciaBancaria));
 
-    strcpy(banco_SFA->nome, "Agencia Samira Aquino França");
-    banco_SFA->codigo=1105;
-    strcpy(banco_SFA->localizacao, "Avenida Brasil");
-    banco_SFA->numero_do_cliente=0;
-    strcpy(banco_SFA->hora_de_funcionamento, "Atendimento a partir das 08:00 as 17:00");
+    strcpy(banco_SAF->nome, "Agencia Samira Aquino França");
+    banco_SAF->codigo=1105;
+    strcpy(banco_SAF->localizacao, "Avenida Brasil");
+    banco_SAF->numero_do_cliente=0;
+    strcpy(banco_SAF->hora_de_funcionamento, "Atendimento a partir das 08:00 as 17:00");*/
 
     unsigned char opcao;
     unsigned int saida = 0;
@@ -120,10 +120,11 @@ int main(void) {
             case OPCAO1:
 
                 Beep(1000,500);
-                
+ 
+                //printf("testey");
                 ContaBancaria* conta = adiciona_conta();
-                Lista * lista_de_conta = adicionar_conta_lista(conta, listas_de_contas_total);
-                banco_SFA->lista_de_conta_da_agencia   = lista_de_conta;  
+                listas_de_contas_total = adicionar_conta_lista(conta, listas_de_contas_total);
+               // banco_SAF->lista_de_conta_da_agencia = listas_de_contas_total; 
 
                 break;
                 
@@ -140,7 +141,7 @@ int main(void) {
                 Beep(1000,500);
 
                 imprime_conta(conta);
-                imprime_lista_de_contas(lista_de_conta);
+                imprime_lista_de_contas(listas_de_contas_total);
                
                 break;
 
@@ -176,8 +177,11 @@ int main(void) {
                 case OPCAO8:
                 
                 Beep(1000,500);
+                
+                saida=1;
+                printf("Obrigada por ultilizar nosso programa!\n");
 
-                printf("Sair\n");
+                printf("Sair, feito por Samira Franca!\n");
 
             default:
 
