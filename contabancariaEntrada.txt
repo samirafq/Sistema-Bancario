@@ -3,7 +3,8 @@ Agencia: 9823
  Data de Abertura: 30.01.2022
  Saldo: 120000.000000
  Status: ativa
- Numero: 128800345Agencia: 12345
+ Numero: 128800345
+Agencia: 12345
  Cliente: Maria
  Data de Abertura: 02.02.2002
  Saldo: 3000.000000
@@ -13,24 +14,44 @@ Agencia: 9823
  Data de Abertura: 04.05.2010
  Saldo: 0.000000
  Status: inativa
- Numero: 9499559Agencia: 98760
+ Numero: 9499559
+Agencia: 98760
  Cliente: samira
  Data de Abertura: 10.10.2010
  Saldo: 4000.000000
  Status: ativa
- Numero: 538969851Agencia: 2345
+ Numero: 538969851
+Agencia: 2345
  Cliente: ivaneide
  Data de Abertura: 12.11.2022
  Saldo: 5000.000000
  Status: ativa
- Numero: 1982041413Agencia: 1113
+ Numero: 1982041413
+Agencia: 1113
  Cliente: ryan
  Data de Abertura: 22.01.2021
  Saldo: 13000.000000
  Status: ativa
- Numero: 342367890Agencia: 12224
+ Numero: 342367890
+Agencia: 12224
  Cliente: samira
  Data de Abertura: 11.11.2011
  Saldo: 1000.000000
  Status: inativa
  Numero: -1549668908
+Agencia: 4443
+ Cliente: sandy
+ Data de Abertura: 10.12.2016
+ Saldo: 4000.000000
+ Status: ativa
+ Numero: 533521065Agencia: 0234
+ Cliente: maisa
+ Data de Abertura: 08.08.2008
+ Saldo: 100.000000
+ Status: inativa
+ Numero: 98653231Agencia: 11111
+ Cliente: mona
+ Data de Abertura: 11.11.2011
+ Saldo: 1000.000000
+ Status: ativa
+ Numero: 1234689

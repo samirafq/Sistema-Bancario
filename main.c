@@ -183,13 +183,9 @@ int main(void) {
                 Beep(1000,500);
                 
                 saida=1;
-                printf("Obrigada por ultilizar nosso programa!\n");
-
-                printf("Sair, feito por Samira Franca!\n");
+                printf("Saida liberada! Obrigada por ultilizar nosso programa! Ateciosamente, banco_SAF!\n");
 
             default:
-
-                printf("Opcao invalida!");
 
                 return 1;
         }
