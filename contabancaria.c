@@ -66,12 +66,12 @@ Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista *lista_de_con
 
 void imprime_conta(ContaBancaria* conta){
 
-    printf("\n Agencia: %s\n", conta->agencia);
-    printf("\n Cliente: %s\n", conta->cliente);
-    printf("\n Data de abertura: %s \n", conta->data_de_abertura);
-    printf("\n Status: %s\n", conta->status);
-    printf("\n Saldo: %f\n", conta->saldo);
-    printf("\n Numero: %i\n", conta->numero);
+    printf("Agencia: %s\n", conta->agencia);
+    printf("Cliente: %s\n", conta->cliente);
+    printf("Data de abertura: %s \n", conta->data_de_abertura);
+    printf("Status: %s\n", conta->status);
+    printf("Saldo: %f\n", conta->saldo);
+    printf("Numero: %i\n", conta->numero);
 
 
 }
@@ -120,17 +120,27 @@ Lista * contador;
 
 /*void consultar_quantitativo_de_agencias(){
 
-}
-
-void remover_conta(ContaBancaria *conta){
-
-    free(conta);
-
-}
-
-void sair_conta(Lista* l){
-
-
-
-
 }*/
+
+Lista* remover_conta(Lista* lista_das_contas, int l){
+
+    Lista* anterior = NULL;
+    Lista* ponteiro = lista_das_contas;
+
+    while(ponteiro->conta->numero!=l){
+        if(ponteiro==NULL)
+                return lista_das_contas;
+    }
+
+    if(anterior==NULL)
+
+        lista_das_contas = ponteiro->prox;
+
+    else
+
+        anterior->prox = ponteiro->prox;
+            free(ponteiro);
+
+    return lista_das_contas;
+
+}

@@ -94,6 +94,8 @@ int main(void) {
     
    Lista* listas_de_contas_total=NULL;
    int numero_conta_busca;
+   Lista* remover_numero=NULL;
+   int list;
 
     //alocacao da agencia
 
@@ -132,7 +134,9 @@ int main(void) {
 
                 Beep(1000,500);
 
-                //AgenciaBancaria* Conta = remover_conta();
+                printf("Conta removida com sucesso!\n");
+                scanf("%d", &remover_numero);
+                listas_de_contas_total = remover_conta(remover_numero, list);
                 
                 break;
 
