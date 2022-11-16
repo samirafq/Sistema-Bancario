@@ -96,6 +96,7 @@ int main(void) {
    int numero_conta_busca;
    Lista* remover_numero=NULL;
    int list;
+   Lista* list_de_cont;
 
     //alocacao da agencia
 
@@ -123,7 +124,6 @@ int main(void) {
 
                 Beep(1000,500);
  
-                //printf("testey");
                 ContaBancaria* conta = adiciona_conta();
                 listas_de_contas_total = adicionar_conta_lista(conta, listas_de_contas_total);
                // banco_SAF->lista_de_conta_da_agencia = listas_de_contas_total; 
@@ -164,8 +164,18 @@ int main(void) {
 
                 Beep(1000,500);
 
-                printf("Editar conta\n");
+               printf("Conta editada com sucesso!\n");
+                
+                int l;
+                char agencia [60];
+                char cliente [60];
 
+                printf("\n Por favor, insira a agencia do cliente:\n ");
+                scanf("%s", conta->agencia);
+                printf("\n Por favor, insira o agencia do cliente:\n ");
+                scanf("%s", conta->cliente);
+                alterar(&list_de_cont, l, agencia, cliente);
+    
             case OPCAO6:
 
                 Beep(1000,500);
@@ -183,6 +193,7 @@ int main(void) {
                 Beep(1000,500);
                 
                 saida=1;
+
                 printf("Saida liberada! Obrigada por ultilizar nosso programa! Ateciosamente, banco_SAF!\n");
 
             default:
@@ -190,7 +201,7 @@ int main(void) {
                 return 1;
         }
 
-    } while(!saida);
+    }while(!saida);
 
     return 0;
 

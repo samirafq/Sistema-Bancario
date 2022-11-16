@@ -17,7 +17,7 @@ void imprime_lista_de_contas(Lista *contas_lista);
 Lista* buscar_conta(int numero_da_conta, Lista* l);
 
 /*funcao que edita a conta*/
-//void editar_conta();
+void editar_conta(Lista* list_de_cont, int numero_de_conta);
 
 /*funcao de consultar contas ativas*/
 /*Lista* consultar_conta_ativa(int elemento, Lista* l);
@@ -27,6 +27,5 @@ Lista* buscar_conta(int numero_da_conta, Lista* l);
 
 /*funcao que remove a conta*/
 Lista* remover_conta(Lista* lista_das_contas, int list );
-
 
 
