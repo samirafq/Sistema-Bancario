@@ -141,8 +141,8 @@ void consultar_conta_ativa(Lista* l){
     char struccliente[60];
 	
 
-    int retorna;
-    int retorna2;
+    int contador;
+    int contador2;
 
     printf("Por gentileza, insira a conta que procura: ");
 	scanf("%s", agencia);
@@ -152,11 +152,11 @@ void consultar_conta_ativa(Lista* l){
 	for(ponteiro=l; ponteiro!=NULL; ponteiro=ponteiro->prox){
 
 		strcpy(strucagencia, ponteiro->conta->agencia);
-		retorna = strcmp(agencia, strucagencia);
+		contador = strcmp(agencia, strucagencia);
 		strcpy(struccliente, ponteiro->conta->cliente);
-		retorna2 = strcmp(cliente, struccliente);
+		contador2 = strcmp(cliente, struccliente);
 
-		if(retorna == 0 && retorna2 == 0){
+		if(contador == 0 && contador2 == 0){
 
 			printf("Total de vagas disponiveis no onibus: %d\n", ponteiro->conta->numero);
 

@@ -164,7 +164,7 @@ int main(void) {
 
                 Beep(1000,500);
 
-               editar_conta(list);
+               editar_conta(list_de_cont);
     
             case OPCAO6:
 

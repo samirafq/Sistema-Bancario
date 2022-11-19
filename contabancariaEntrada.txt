@@ -99,4 +99,9 @@ Agencia: 4443
  Data de Abertura: 09.09.2017
  Saldo: 23000.000000
  Status: ativa
- Numero: 228855400
+ Numero: 228855400Agencia: 888889
+ Cliente: amanda
+ Data de Abertura: 06.06.2019
+ Saldo: 30000.000000
+ Status: ativa
+ Numero: 23456880
