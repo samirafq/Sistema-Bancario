@@ -17,13 +17,13 @@ void imprime_lista_de_contas(Lista *contas_lista);
 Lista* buscar_conta(int numero_da_conta, Lista* l);
 
 /*funcao que edita a conta*/
-void editar_conta(Lista* list_de_cont, int numero_de_conta);
+void editar_conta(Lista *l);
 
 /*funcao de consultar contas ativas*/
-/*Lista* consultar_conta_ativa(int elemento, Lista* l);
+void consultar_conta_ativa(Lista* l);
 
 /*funcao de consultar a quantidade de agencias*/
-//void consultar_quantitativo_de_agencias();
+void consultar_quantitativo_de_agencias(Lista* l);
 
 /*funcao que remove a conta*/
 Lista* remover_conta(Lista* lista_das_contas, int list );

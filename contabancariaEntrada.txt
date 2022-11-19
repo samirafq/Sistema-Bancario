@@ -84,4 +84,19 @@ Agencia: 4443
  Data de Abertura: 10
  Saldo: 700.000000
  Status: ativo
- Numero: 6
+ Numero: 6Agencia: 2345
+ Cliente: samira
+ Data de Abertura: 11.11.2000
+ Saldo: 20000.000000
+ Status: ativa
+ Numero: 296730841Agencia: 4567
+ Cliente: carol
+ Data de Abertura: 11.02.2013
+ Saldo: 1000.000000
+ Status: inativa
+ Numero: 98124577Agencia: 1111
+ Cliente: sami
+ Data de Abertura: 09.09.2017
+ Saldo: 23000.000000
+ Status: ativa
+ Numero: 228855400

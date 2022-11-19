@@ -102,7 +102,7 @@ int main(void) {
 
    /* AgenciaBancaria* banco_SAF=(AgenciaBancaria*) malloc(sizeof(AgenciaBancaria));
 
-    strcpy(banco_SAF->nome, "Agencia Samira Aquino França");
+    strcpy(banco_SAF->nome, "Agencia SAF");
     banco_SAF->codigo=1105;
     strcpy(banco_SAF->localizacao, "Avenida Brasil");
     banco_SAF->numero_do_cliente=0;
@@ -134,7 +134,7 @@ int main(void) {
 
                 Beep(1000,500);
 
-                printf("Conta removida com sucesso!\n");
+                printf("Insira o numero que deseja excluir: \n");
                 scanf("%d", &remover_numero);
                 listas_de_contas_total = remover_conta(remover_numero, list);
                 
@@ -164,29 +164,19 @@ int main(void) {
 
                 Beep(1000,500);
 
-               printf("Conta editada com sucesso!\n");
-                
-                int l;
-                char agencia [60];
-                char cliente [60];
-
-                printf("\n Por favor, insira a agencia do cliente:\n ");
-                scanf("%s", conta->agencia);
-                printf("\n Por favor, insira o agencia do cliente:\n ");
-                scanf("%s", conta->cliente);
-                alterar(&list_de_cont, l, agencia, cliente);
+               editar_conta(list);
     
             case OPCAO6:
 
                 Beep(1000,500);
 
-                printf("Consultar contas ativas em uma dada agencia\n");
+                
 
             case OPCAO7:
 
                 Beep(1000,500);
 
-                printf("Consultar quantitativo de agencias\n");
+        
 
                 case OPCAO8:
                 
