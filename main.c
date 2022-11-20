@@ -98,11 +98,13 @@ int main(void) {
    int list;
    Lista* list_de_cont;
 
+printf("\nBem vindos ao Sistema de Gestao Bancario!\nPor Favor, selecione a Opcao desejada:\n\n");
+
     //alocacao da agencia
 
    /* AgenciaBancaria* banco_SAF=(AgenciaBancaria*) malloc(sizeof(AgenciaBancaria));
 
-    strcpy(banco_SAF->nome, "Agencia SAF");
+    strcpy(banco_SAF->nome, "Agencia Samira Franca");
     banco_SAF->codigo=1105;
     strcpy(banco_SAF->localizacao, "Avenida Brasil");
     banco_SAF->numero_do_cliente=0;
@@ -164,19 +166,19 @@ int main(void) {
 
                 Beep(1000,500);
 
-               editar_conta(list_de_cont);
+               editar_conta(listas_de_contas_total);
     
             case OPCAO6:
 
                 Beep(1000,500);
-
                 
+                consultar_conta_ativa(listas_de_contas_total);
 
             case OPCAO7:
 
                 Beep(1000,500);
 
-        
+                consultar_quantitativo_de_agencias(listas_de_contas_total);
 
                 case OPCAO8:
                 
@@ -187,6 +189,8 @@ int main(void) {
                 printf("Saida liberada! Obrigada por ultilizar nosso programa! Ateciosamente, banco_SAF!\n");
 
             default:
+
+            //printf("Este programa possui um bug.");
 
                 return 1;
         }

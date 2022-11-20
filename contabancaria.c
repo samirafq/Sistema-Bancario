@@ -12,6 +12,13 @@ struct contabancaria{
     float saldo;
     char status [60];
     int numero;
+
+    char nova_agencia [60];
+    char novo_cliente [60];
+    char nova_data_de_abertura [60];
+    float novo_saldo;
+    char novo_status [60];
+    int novo_numero;
 };
 
 struct lista{
@@ -109,21 +116,22 @@ void editar_conta(Lista *l){
 	scanf("%d", &elemento);
 
 	Lista *ponteiro;
+
     for(ponteiro=l; ponteiro!=NULL; ponteiro=ponteiro->prox){
 		if(ponteiro->conta->numero == elemento){
 
     printf("Insira a nova agencia do cliente: ");
-    scanf("%s", ponteiro->conta->agencia);
+    scanf("%s", ponteiro->conta->nova_agencia);
     printf("Insira o novo nome do cliente: ");
-    scanf("%s", ponteiro->conta->cliente);
+    scanf("%s", ponteiro->conta->novo_cliente);
     printf("Insira a nova data de abertura do cliente: ");
-    scanf("%s", ponteiro->conta->data_de_abertura);
+    scanf("%s", ponteiro->conta->nova_data_de_abertura);
     printf("Insira o novo saldo do cliente: ");
-    scanf("%f", ponteiro->conta->saldo);
+    scanf("%f", ponteiro->conta->novo_saldo);
     printf("Insira o novo status do cliente: ");
-    scanf("%s", ponteiro->conta->status);
+    scanf("%s", ponteiro->conta->novo_status);
     printf("Insira o novo numero do cliente: ");
-    scanf("%d", ponteiro->conta->numero);
+    scanf("%d", ponteiro->conta->novo_numero);
 
         }
    
@@ -141,8 +149,8 @@ void consultar_conta_ativa(Lista* l){
     char struccliente[60];
 	
 
-    int contador;
-    int contador2;
+    int retorno_conta_1;
+    int retorno_conta2;
 
     printf("Por gentileza, insira a conta que procura: ");
 	scanf("%s", agencia);
@@ -152,11 +160,11 @@ void consultar_conta_ativa(Lista* l){
 	for(ponteiro=l; ponteiro!=NULL; ponteiro=ponteiro->prox){
 
 		strcpy(strucagencia, ponteiro->conta->agencia);
-		contador = strcmp(agencia, strucagencia);
+		retorno_conta_1 = strcmp(agencia, strucagencia);
 		strcpy(struccliente, ponteiro->conta->cliente);
-		contador2 = strcmp(cliente, struccliente);
+		retorno_conta2 = strcmp(cliente, struccliente);
 
-		if(contador == 0 && contador2 == 0){
+		if(retorno_conta_1 == 0 && retorno_conta2 == 0){
 
 			printf("Total de contas ativas: %d\n", ponteiro->conta->numero);
 
@@ -176,7 +184,7 @@ int contador_de_lista = 0;
 			
 	}
 
-    printf("A quantidade de agencia sera: %d\n", contador_de_lista);
+    printf("Quantidade de agencias disponiveis eh: %d\n", contador_de_lista);
 	
 
 }
