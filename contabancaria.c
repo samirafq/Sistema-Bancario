@@ -158,7 +158,7 @@ void consultar_conta_ativa(Lista* l){
 
 		if(contador == 0 && contador2 == 0){
 
-			printf("Total de vagas disponiveis no onibus: %d\n", ponteiro->conta->numero);
+			printf("Total de contas ativas: %d\n", ponteiro->conta->numero);
 
 		}
 	}
