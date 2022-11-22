@@ -92,11 +92,10 @@ void Menu(int nItens, int Opcao, ...) {
 
 int main(void) {
     
-   Lista* listas_de_contas_total=NULL;
+   Lista* listas_de_contas_total= cria_lista();
    int numero_conta_busca;
-   Lista* remover_numero=NULL;
-   int list;
-   Lista* list_de_cont;
+   int n;
+
 
 printf("\nBem vindos ao Sistema de Gestao Bancario!\nPor Favor, selecione a Opcao desejada:\n\n");
 
@@ -136,9 +135,9 @@ printf("\nBem vindos ao Sistema de Gestao Bancario!\nPor Favor, selecione a Opca
 
                 Beep(1000,500);
 
-                printf("Insira o numero que deseja excluir: \n");
-                scanf("%d", &remover_numero);
-                listas_de_contas_total = remover_conta(remover_numero, list);
+                printf("Insira o numero da agencia que deseja excluir: \n");
+                scanf("%d", &n);
+                listas_de_contas_total = remover_conta(listas_de_contas_total, n);
                 
                 break;
 
@@ -167,18 +166,22 @@ printf("\nBem vindos ao Sistema de Gestao Bancario!\nPor Favor, selecione a Opca
                 Beep(1000,500);
 
                editar_conta(listas_de_contas_total);
+
+             break;
     
             case OPCAO6:
 
                 Beep(1000,500);
                 
-                consultar_conta_ativa(listas_de_contas_total);
+                //consultar_conta_ativa(listas_de_contas_total);
 
             case OPCAO7:
 
                 Beep(1000,500);
 
                 consultar_quantitativo_de_agencias(listas_de_contas_total);
+                
+                break;
 
                 case OPCAO8:
                 
@@ -187,12 +190,15 @@ printf("\nBem vindos ao Sistema de Gestao Bancario!\nPor Favor, selecione a Opca
                 saida=1;
 
                 printf("Saida liberada! Obrigada por ultilizar nosso programa! Ateciosamente, banco_SAF!\n");
+                
+                break; 
 
             default:
 
-            //printf("Este programa possui um bug.");
+            printf("Este programa possui um bug.");
 
                 return 1;
+            
         }
 
     }while(!saida);

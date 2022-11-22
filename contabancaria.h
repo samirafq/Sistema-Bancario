@@ -4,8 +4,17 @@ typedef struct lista Lista;
 /*funcao que adiciona uma conta*/
 ContaBancaria* adiciona_conta(void);
 
+/*funcao de cria lista*/
+Lista* cria_lista(void);
+
 /*funcao que adiciona uma conta de lista*/
 Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista *lista_de_conta);
+
+/*funcao da lista vazia*/
+int conta_vazia(Lista* l);
+
+/*funcao que remove a conta*/
+Lista* remover_conta(Lista* l, int e);
 
 /*funcao que imprime uma conta*/
 void imprime_conta(ContaBancaria* conta);
@@ -20,12 +29,11 @@ Lista* buscar_conta(int numero_da_conta, Lista* l);
 void editar_conta(Lista *l);
 
 /*funcao de consultar contas ativas*/
-void consultar_conta_ativa(Lista* l);
+//void consultar_conta_ativa(Lista* l);
 
 /*funcao de consultar a quantidade de agencias*/
 void consultar_quantitativo_de_agencias(Lista* l);
 
-/*funcao que remove a conta*/
-Lista* remover_conta(Lista* lista_das_contas, int list );
+
 
 

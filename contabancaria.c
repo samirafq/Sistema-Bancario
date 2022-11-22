@@ -13,12 +13,6 @@ struct contabancaria{
     char status [60];
     int numero;
 
-    char nova_agencia [60];
-    char novo_cliente [60];
-    char nova_data_de_abertura [60];
-    float novo_saldo;
-    char novo_status [60];
-    int novo_numero;
 };
 
 struct lista{
@@ -36,16 +30,16 @@ ContaBancaria* adiciona_conta(void){
         printf("Erro ao alocar memoria");
         exit(1);
     }
-    printf("\nPor favor, insira a agencia do cliente:\n ");
-    scanf("%s", conta->agencia);
+    printf("\nPor favor, insira o numero agencia do cliente:\n ");
+    scanf(" %[^\n]", conta->agencia);
     printf("\nPor favor, insira o nome do cliente:\n ");
-    scanf("%s", conta->cliente);
+    scanf(" %[^\n]", conta->cliente);
     printf("\nPor favor, insira a data da abertura da conta:\n ");
-    scanf("%s", conta->data_de_abertura);
+    scanf(" %[^\n]", conta->data_de_abertura);
     printf("\nPor favor, insira o saldo da conta:\n ");
     scanf("%f", &conta->saldo);
     printf("\nPor favor, insira o status da sua conta:\n ");
-    scanf("%s", conta->status);
+    scanf(" %[^\n]", conta->status);
     printf("\nPor favor, insira o numero da conta:\n ");
     scanf("%d", &conta->numero);
 
@@ -60,7 +54,10 @@ ContaBancaria* adiciona_conta(void){
     
     return conta;
 }
+ Lista* cria_lista(void){
 
+    return NULL; 
+ }
 
 Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista *lista_de_conta)
 {
@@ -71,6 +68,37 @@ Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista *lista_de_con
     return nova_conta;
 }
 
+int conta_vazia(Lista* l){
+    return(l==NULL);
+}
+
+Lista* remover_conta(Lista* l, int e){
+
+    Lista* anterior = NULL;
+    Lista* ponteiro = l;
+
+    while(ponteiro->conta->numero != e){
+        if(ponteiro==NULL)
+                return l;
+
+                anterior = ponteiro;
+                ponteiro = ponteiro->prox;
+    }
+
+    if(anterior==NULL)
+
+        l = ponteiro->prox;
+
+    else
+
+        anterior->prox = ponteiro->prox;
+        
+
+      free(ponteiro);
+
+    return l;
+
+}
 
 void imprime_conta(ContaBancaria* conta){
 
@@ -101,10 +129,11 @@ Lista *buscar_conta(int numero_da_conta, Lista *l)
 
     for (contador_lista = l; contador_lista != NULL; contador_lista = contador_lista->prox)
     {
-        if (contador_lista->conta->numero == numero_da_conta);
-        return contador_lista;
+        if (contador_lista->conta->numero == numero_da_conta){
+             return contador_lista;
+        }
+       
     }
-
     return NULL;
 }
 
@@ -112,26 +141,27 @@ void editar_conta(Lista *l){
 
     int elemento = 0;
     
-    printf("Insira o que deseja buscar na conta: ");
+    printf("Insira o numero da conta anterior: ");
 	scanf("%d", &elemento);
 
-	Lista *ponteiro;
-
+    Lista *ponteiro;
     for(ponteiro=l; ponteiro!=NULL; ponteiro=ponteiro->prox){
 		if(ponteiro->conta->numero == elemento){
 
+    printf("conta encontrada!");
+
     printf("Insira a nova agencia do cliente: ");
-    scanf("%s", ponteiro->conta->nova_agencia);
+    scanf(" %[^\n]", ponteiro->conta->agencia);
     printf("Insira o novo nome do cliente: ");
-    scanf("%s", ponteiro->conta->novo_cliente);
+    scanf(" %[^\n]", ponteiro->conta->cliente);
     printf("Insira a nova data de abertura do cliente: ");
-    scanf("%s", ponteiro->conta->nova_data_de_abertura);
+    scanf(" %[^\n]", ponteiro->conta->data_de_abertura);
     printf("Insira o novo saldo do cliente: ");
-    scanf("%f", ponteiro->conta->novo_saldo);
+    scanf("%f", &ponteiro->conta->saldo);
     printf("Insira o novo status do cliente: ");
-    scanf("%s", ponteiro->conta->novo_status);
+    scanf(" %[^\n]", ponteiro->conta->status);
     printf("Insira o novo numero do cliente: ");
-    scanf("%d", ponteiro->conta->novo_numero);
+    scanf("%d", &ponteiro->conta->numero);
 
         }
    
@@ -139,7 +169,7 @@ void editar_conta(Lista *l){
   
 }
 
-void consultar_conta_ativa(Lista* l){
+/*void consultar_conta_ativa(Lista* l){
 
 	Lista* ponteiro;
 
@@ -153,9 +183,9 @@ void consultar_conta_ativa(Lista* l){
     int retorno_conta2;
 
     printf("Por gentileza, insira a conta que procura: ");
-	scanf("%s", agencia);
+	scanf(" %[^\n]", agencia);
 	printf("Por gentileza, insira o nome do cliente: ");
-	scanf("%s", cliente);
+	scanf(" %[^\n]", cliente);
 
 	for(ponteiro=l; ponteiro!=NULL; ponteiro=ponteiro->prox){
 
@@ -172,7 +202,7 @@ void consultar_conta_ativa(Lista* l){
 	}
 	
 
-}
+}*/
 
 void consultar_quantitativo_de_agencias(Lista* l){
 
@@ -189,27 +219,4 @@ int contador_de_lista = 0;
 
 }
 
-Lista* remover_conta(Lista* lista_das_contas, int l){
-
-    Lista* anterior = NULL;
-    Lista* ponteiro = lista_das_contas;
-
-    while(ponteiro->conta->numero!=l){
-        if(ponteiro==NULL)
-                return lista_das_contas;
-    }
-
-    if(anterior==NULL)
-
-        lista_das_contas = ponteiro->prox;
-
-    else
-
-        anterior->prox = ponteiro->prox;
-        
-            free(ponteiro);
-
-    return lista_das_contas;
-
-}
 
