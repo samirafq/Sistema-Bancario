@@ -72,12 +72,12 @@ int conta_vazia(Lista* l){
     return(l==NULL);
 }
 
-Lista* remover_conta(Lista* l, int e){
+Lista* remover_conta(Lista* l, int elemento){
 
     Lista* anterior = NULL;
     Lista* ponteiro = l;
 
-    while(ponteiro->conta->numero != e){
+    while(ponteiro->conta->numero != elemento){
         if(ponteiro==NULL)
                 return l;
 
@@ -148,7 +148,7 @@ void editar_conta(Lista *l){
     for(ponteiro=l; ponteiro!=NULL; ponteiro=ponteiro->prox){
 		if(ponteiro->conta->numero == elemento){
 
-    printf("conta encontrada!");
+    printf("conta encontrada!\n");
 
     printf("Insira a nova agencia do cliente: ");
     scanf(" %[^\n]", ponteiro->conta->agencia);

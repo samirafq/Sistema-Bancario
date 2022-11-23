@@ -14,7 +14,7 @@ Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista *lista_de_con
 int conta_vazia(Lista* l);
 
 /*funcao que remove a conta*/
-Lista* remover_conta(Lista* l, int e);
+Lista* remover_conta(Lista* l, int elemento);
 
 /*funcao que imprime uma conta*/
 void imprime_conta(ContaBancaria* conta);
