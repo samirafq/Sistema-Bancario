@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "contabancaria.h"
 #include "agenciabancaria.h"
 
@@ -69,6 +68,7 @@ Lista *adicionar_conta_lista(ContaBancaria *conta_adicionar, Lista *lista_de_con
 }
 
 int conta_vazia(Lista* l){
+    
     return(l==NULL);
 }
 

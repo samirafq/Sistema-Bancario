@@ -1,6 +1,11 @@
-Agencia: 1234
- Cliente: maria clara
- Data de Abertura: 12.04.2023
- Saldo: 2000.000000
+Agencia: 123
+ Cliente: samira aquino
+ Data de Abertura: 09.08.2021
+ Saldo: 1000.000000
  Status: ativa
- Numero: 8765432
+ Numero: 123456Agencia: kamila julia
+ Cliente: 321
+ Data de Abertura: 01.02.2022
+ Saldo: 2000.000000
+ Status: inativa
+ Numero: 98765
